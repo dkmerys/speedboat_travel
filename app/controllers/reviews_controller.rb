@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   end
 
   def create 
-    @review = Review.create(review_params)
+    @review = Review.create!(review_params)
     json_response(@review)
   end
   
@@ -20,11 +20,7 @@ class ReviewsController < ApplicationController
     @review.update(review_params)
   end
 
-  private 
-  def json_response(object, status = :ok)
-    render json: object, status: status
-  end
-
+  private
   def review_params
     params.permit(:author, :content, :city, :country)
   end
