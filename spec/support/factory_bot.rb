@@ -1,5 +1,5 @@
-require factory_bot_rails
+require 'factory_bot_rails'
 
 RSpec.configure do |config|
-Config.include FactoryBot::Syntax::Methods
+config.include FactoryBot::Syntax::Methods
 end
