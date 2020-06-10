@@ -35,6 +35,6 @@ module Speedboat
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.middleware.use Rack::Throttle:Interval, :min => 3.0
+    config.middleware.use Rack::Throttle::Interval, :min => 3.0
   end
 end
