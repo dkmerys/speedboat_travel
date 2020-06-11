@@ -2,7 +2,7 @@ module JsonWebToken
   
     def self.encode(payload, exp = 100.hours.from_now)
       payload[:exp] = exp.to_i
-      JWT.encode(payload, Rails.application.secrets.secret_key_base)
+      JWT.encode(payload, secret_key)
     end
 
     def self.decode(token)
