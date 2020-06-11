@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
   
+
   def index 
-    @reviews = Review.all
+    
+    @reviews = Review.order(:city).page
     json_response(@reviews)
   end
 
@@ -37,4 +39,5 @@ class ReviewsController < ApplicationController
   def review_params
     params.permit(:author, :content, :city, :country)
   end
+
 end
